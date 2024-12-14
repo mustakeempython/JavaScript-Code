@@ -15,10 +15,21 @@ for(const name of myName){
 const map = new Map()
 map.set('IN', 'India')
 map.set('UK','United Kingdom')
-map.set('UAE','United Arab oa Amirat')
-map.set('USA','Unoted State of America')
+map.set('UAE','United Arab of Amirates')
+map.set('USA','United State of America')
 // console.log(map)
 
 for(const [key, value] of map){
     console.log(key, ':-', value);
 }
+
+// -----+++++----- It's not work on Objects-----+++++-----0x
+
+const myObj = {
+    game1 : 'PUBG',
+    game2 : 'FreeFire'
+}
+// for(const [key, value] of myObj){
+    // console.log(key, ':-', value)
+// }
+
