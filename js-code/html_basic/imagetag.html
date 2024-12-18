@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://images.pexels.com/photos/12894542/pexels-photo-12894542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="600px" height="400px" alt="no image">
+
+    <img src="../image/beac.png" width="600px" height="400px" alt="no image">
+    <picture>
+        <source media="(min-width: 650px)" srcset="../image/beach5.png">
+        <source media="(min-width: 460px)" srcset="../image/beach1.png">
+        <img src="../image/beach3.png" width="600px" alt="Hi no image">
+    </picture>
+
+    <img src="../image/college.jpg" width="400px" usemap="#image-map">
+    <map name="image-map">
+        <area onclick="sabir()" target="" alt="" title="" href="" coords="131,273,28" shape="circle">
+        <area onclick="rajat()" target="" alt="" title="" href="" coords="500,202,537,241" shape="rect">
+    </map>
+    <script>
+        function sabir(){
+            alert("You click on Sabir")
+        }
+        function rajat(){
+            alert("You click on Rajat")
+        }
+    </script>
+
+</body>
+</html>
