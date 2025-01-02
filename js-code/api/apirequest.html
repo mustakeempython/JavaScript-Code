@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: #1de366;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main-heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 340px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            margin: 0 0 8px 0;
+        }
+
+        .card-description {
+            font-size: 1em;
+            color: #13a513;
+            margin: 0 0 16px 0;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .card-description:hover {
+            color: #1de366;
+        }
+
+        .card-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .card-button:hover {
+            background-color: #0056b3;
+        }
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2 class="main-heading">Creating Card</h2>
+    <div class="card">
+        <img src="https://avatars.githubusercontent.com/u/48715472?v=4" alt="Card image" class="card-img">
+        <div class="card-content">
+            <h2 class="card-title">
+                Get images by Api
+            </h2>
+            <button class="card-button" onclick="toggleModal(1)">
+                Get Images
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/mustakeempython'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.avatar_url);
+        }
+    }
+    xhr.send();
+
+    // var img = new Image('.card');
+    // img.src = 'https://avatars.githubusercontent.com/u/48715472?v=4';
+    // img.onload = function() {
+    //     document.body.appendChild(img); // Append the image to the document after loading
+    // };
+    // img.onerror = function() {
+    //     console.error('Failed to load the image.');
+    // };
+</script>
+</html>
+<!-- https://media.geeksforgeeks.org/wp-content/uploads/20230416201559/DevOps-Roadmap.webp -->
